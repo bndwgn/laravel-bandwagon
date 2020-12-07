@@ -1,0 +1,57 @@
+{
+    "name": "bndwgn/laravel-bandwagon",
+    "description": "",
+    "keywords": [
+        "bandwagon"
+    ],
+    "homepage": "https://github.com/bndwgn/laravel-bandwagon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Harris",
+            "email": "alex@alexharris.nyc",
+            "homepage": "https://github.com/chasenyc",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/contracts": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3",
+        "vimeo/psalm": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bndwgn\\Bandwagon\\": "src",
+            "Bndwgn\\Bandwagon\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bndwgn\\Bandwagon\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bndwgn\\Bandwagon\\BandwagonServiceProvider"
+            ],
+            "aliases": {
+                "Bandwagon": "Bndwgn\\Bandwagon\\BandwagonFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

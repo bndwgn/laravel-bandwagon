@@ -2,8 +2,8 @@
 
 namespace Bndwgn\Bandwagon\Commands;
 
-use Illuminate\Console\Command;
 use Bndwgn\Bandwagon\Models\BandwagonEvent;
+use Illuminate\Console\Command;
 
 class BandwagonCleanup extends Command
 {

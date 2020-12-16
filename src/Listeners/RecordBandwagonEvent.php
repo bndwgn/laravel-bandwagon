@@ -11,10 +11,10 @@ class RecordBandwagonEvent
     {
         error_log('event_heeard');
         BandwagonEvent::create([
-            'title'     => $event->title,
-            'subtitle'  => $event->subtitle,
-            'ip'        => $event->ip,
-            'event_at'  => time(),
+            'title' => $event->title,
+            'subtitle' => $event->subtitle,
+            'ip' => $event->ip,
+            'event_at' => time(),
         ]);
     }
 }

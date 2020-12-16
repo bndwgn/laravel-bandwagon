@@ -2,11 +2,11 @@
 
 namespace Bndwgn\Bandwagon;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
 use Bndwgn\Bandwagon\Commands\BandwagonCleanup;
 use Bndwgn\Bandwagon\Providers\EventServiceProvider;
 use Bndwgn\Bandwagon\View\Components\Renderer;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
 
 class BandwagonServiceProvider extends ServiceProvider
 {

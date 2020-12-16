@@ -7,7 +7,8 @@ use Illuminate\Queue\SerializesModels;
 
 class BandwagonEventCreated
 {
-    use Dispatchable, SerializesModels;
+    use Dispatchable;
+    use SerializesModels;
 
     public $title;
     public $subtitle;
@@ -15,7 +16,7 @@ class BandwagonEventCreated
 
     /**
      * Create a new event instance.
-     * 
+     *
      * @param String $title
      * @param String $subtitle
      * @param String $ip

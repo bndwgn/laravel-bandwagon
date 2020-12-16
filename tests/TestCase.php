@@ -2,9 +2,9 @@
 
 namespace Bndwgn\Bandwagon\Tests;
 
+use Bndwgn\Bandwagon\BandwagonServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Bndwgn\Bandwagon\BandwagonServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Bndwgn\Bandwagon\Commands\BandwagonCleanup;
 use Bndwgn\Bandwagon\Providers\EventServiceProvider;
+use Bndwgn\Bandwagon\View\Components\Renderer;
 
 class BandwagonServiceProvider extends ServiceProvider
 {
@@ -27,13 +28,18 @@ class BandwagonServiceProvider extends ServiceProvider
                 ], 'migrations');
             }
 
-            $this->registerRoutes();
-            $this->registerProviders();
-
             $this->commands([
                 BandwagonCleanup::class,
             ]);
+
+            $this->publishes([
+                __DIR__.'/../public' => public_path('vendor/bandwagon'),
+            ], 'bandwagon-assets');
         }
+
+        $this->registerRoutes();
+        $this->registerProviders();
+        $this->loadComponents();
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bandwagon');
     }
@@ -53,6 +59,13 @@ class BandwagonServiceProvider extends ServiceProvider
         }
 
         return false;
+    }
+
+    protected function loadComponents()
+    {
+        $this->loadViewComponentsAs('bandwagon', [
+            Renderer::class,
+        ]);
     }
 
     /**

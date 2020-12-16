@@ -1941,8 +1941,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -1952,10 +1950,9 @@ __webpack_require__.r(__webpack_exports__);
       since: null
     };
   },
-  props: {
-    poll: Number,
-    display: Number,
-    prefix: String
+  mounted: function mounted() {
+    setInterval(this.loadMessage, Bandwagon.poll * 1000);
+    this.loadMessage();
   },
   methods: {
     clearMessage: function clearMessage() {
@@ -1965,12 +1962,12 @@ __webpack_require__.r(__webpack_exports__);
     loadMessage: function loadMessage() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.prefix + '/bandwagon-api/event?since=' + this.since).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(Bandwagon.path + '/bandwagon-api/event?since=' + this.since).then(function (response) {
         if (response.data) {
           _this.title = response.data.title;
           _this.subtitle = response.data.subtitle;
           _this.since = response.data.event_at;
-          setTimeout(_this.clearProof, 30000);
+          setTimeout(_this.clearMessage, Bandwagon.display * 1000);
         }
       });
     },
@@ -1997,64 +1994,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   }
-}); //     data: function () {
-//         return {
-//             title: null,
-//             subtitle: null,
-//             since: null
-//         }
-//     },
-//     props: {
-//         refresh: Number,
-//     },
-//     mounted() {
-//         setInterval(this.loadProof, this.refresh);
-//         this.loadProof();
-//     },
-//     methods: {
-//         clearProof() {
-//             this.title = null
-//             this.subtitle = null
-//         },
-//         loadProof() {
-//             axios.get('/proofs?since=' + this.since)
-//                 .then(response => {
-//                     if (response.data) {
-//                         this.title = response.data.title
-//                         this.subtitle = response.data.subtitle
-//                         this.since = response.data.created_at
-//                         setTimeout(this.clearProof, 30000);
-//                     }
-//                 })
-//         },
-//         timeDifference() {
-//             var msPerMinute = 60 * 1000;
-//             var msPerHour = msPerMinute * 60;
-//             var msPerDay = msPerHour * 24;
-//             var msPerMonth = msPerDay * 30;
-//             var msPerYear = msPerDay * 365;
-//             var elapsed = Date.now() - (this.since * 1000);
-//             if (elapsed < msPerMinute) {
-//                 return Math.round(elapsed/1000) + ' seconds ago';   
-//             }
-//             else if (elapsed < msPerHour) {
-//                 return Math.round(elapsed/msPerMinute) + ' minutes ago';   
-//             }
-//             else if (elapsed < msPerDay ) {
-//                 return Math.round(elapsed/msPerHour ) + ' hours ago';   
-//             }
-//             else if (elapsed < msPerMonth) {
-//                 return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';   
-//             }
-//             else if (elapsed < msPerYear) {
-//                 return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';   
-//             }
-//             else {
-//                 return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';   
-//             }
-//         }
-//     }
-// }
+});
 
 /***/ }),
 
@@ -2548,28 +2488,19 @@ var render = function() {
       attrs: { id: "bandwagon-snackbar" }
     },
     [
-      _c(
-        "div",
-        {
-          staticClass:
-            "p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4"
-        },
-        [
-          _c("div", [
-            _c("p", { staticClass: "text-left text-base text-gray-500" }, [
-              _vm._v(_vm._s(_vm.title))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-left text-base text-gray-500" }, [
-              _vm._v(_vm._s(_vm.subtitle))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-right text-sm text-gray-500" }, [
-              _vm._v(_vm._s(_vm.timeDifference()))
-            ])
-          ])
-        ]
-      )
+      _c("div", { staticClass: "bandwagon-message" }, [
+        _c("p", { staticClass: "bandwagon-title" }, [
+          _vm._v(_vm._s(_vm.title))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "bandwagon-subtitle" }, [
+          _vm._v(_vm._s(_vm.subtitle))
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "bandwagon-time" }, [
+          _vm._v(_vm._s(_vm.timeDifference()))
+        ])
+      ])
     ]
   )
 }
@@ -14789,8 +14720,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _BandwagonRenderer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BandwagonRenderer */ "./resources/js/BandwagonRenderer.vue");
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bandwagon-renderer', __webpack_require__(/*! ./BandwagonRenderer.vue */ "./resources/js/BandwagonRenderer.vue")["default"]);
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('bandwagon-renderer', _BandwagonRenderer__WEBPACK_IMPORTED_MODULE_1__["default"]);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#bandwagon'
 });

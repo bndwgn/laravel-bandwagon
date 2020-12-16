@@ -2,6 +2,7 @@
 
 namespace Bndwgn\Bandwagon\View\Components;
 
+use Bndwgn\Bandwagon\Bandwagon;
 use Illuminate\View\Component;
 
 class Renderer extends Component
@@ -24,9 +25,7 @@ class Renderer extends Component
     public function render()
     {
         return view('vendor.bandwagon.renderer', [
-            'display' => config('bandwagon.display'),
-            'poll' => config('bandwagon.poll'),
-            'prefix' => config('bandwagon.prefix'),
+            'bandwagonScriptVariables' => Bandwagon::scriptVariables(),
         ]);
     }
 }

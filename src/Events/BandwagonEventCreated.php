@@ -23,6 +23,7 @@ class BandwagonEventCreated
      */
     public function __construct(String $title, String $subtitle, String $ip = '')
     {
+        error_log('event_fired');
         $this->title = $title;
         $this->subtitle = $subtitle;
         $this->ip = $ip;

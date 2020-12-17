@@ -1,9 +1,9 @@
 <template>
     <div id="bandwagon-snackbar" :class="(title || subtitle) ? 'show' : null">
         <div class="bandwagon-message">
-            <p class="bandwagon-title">{{ title }}</p>
-            <p class="bandwagon-subtitle">{{ subtitle }}</p>
-            <p class="bandwagon-time">{{ timeDifference() }}</p>
+            <p class="bandwagon-text bandwagon-title">{{ title }}</p>
+            <p class="bandwagon-text bandwagon-subtitle">{{ subtitle }}</p>
+            <p class="bandwagon-text bandwagon-time">{{ timeDifference() }}</p>
         </div>
     </div>
 </template>

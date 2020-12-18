@@ -9,3 +9,4 @@ node_modules
 phpunit.xml
 psalm.xml
 vendor
+dist

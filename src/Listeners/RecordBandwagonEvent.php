@@ -9,7 +9,6 @@ class RecordBandwagonEvent
 {
     public function handle(BandwagonEventCreated $event)
     {
-        error_log('event_heeard');
         BandwagonEvent::create([
             'title' => $event->title,
             'subtitle' => $event->subtitle,

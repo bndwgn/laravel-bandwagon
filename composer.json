@@ -24,6 +24,7 @@
         "vimeo/psalm": "^3.11"
     },
     "autoload": {
+        "exclude-from-classmap": ["/docs/", "/tests/"],
         "psr-4": {
             "Bndwgn\\Bandwagon\\": "src",
             "Bndwgn\\Bandwagon\\Database\\Factories\\": "database/factories"

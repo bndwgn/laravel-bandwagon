@@ -39,7 +39,7 @@ return [
     | Cleanup
     |--------------------------------------------------------------------------
     |
-    | These keys are for use with cleaning up old Bandwagon Events. They are
+    | These keys are for use with cleaning up old Bandwagon Events. Events are
     | stored in the database and will continue to grow with time, depending on
     | your needs you may want to clear ones that will not be part of a query. 
     | Any events that are older than the `oldest` config setting will never be 
@@ -51,6 +51,14 @@ return [
         'olderthan' => env('BANDWAGON_CLEANUP_OLDER_THAN', 86400),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Routes
+    |--------------------------------------------------------------------------
+    |
+    | These two values are for the api endpoint that exposes bandwagon
+    | events to the client.
+    */
     'domain' => env('BANDWAGON_DOMAIN', null),
     'path' => env('TELESCOPE_PATH', 'bandwagon'),
 ];

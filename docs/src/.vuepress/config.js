@@ -12,7 +12,7 @@ module.exports = {
   /**
    * Ref: https://vuepress.vuejs.org/guide/deploy.html#github-pages
    */
-  base: 'laravel-bandwagon',
+  base: '/laravel-bandwagon',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -42,12 +42,12 @@ module.exports = {
         link: '/guide/',
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'Author',
+        link: 'https://github.com/chasenyc'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Source',
+        link: 'https://github.com/bndwgn/laravel-bandwagon'
       }
     ],
     sidebar: {
@@ -58,6 +58,9 @@ module.exports = {
           children: [
             '',
             'getting-started',
+            'configuration',
+            'cleaning-up',
+            'firing-events'
           ]
         }
       ],

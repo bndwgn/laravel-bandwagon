@@ -5,8 +5,8 @@ tagline: Social proof package for Laravel
 actionText: Quick Start →
 actionLink: /guide/
 features:
-- title: Feature 1 Title
-  details: Feature 1 Description
+- title: Plug and Play
+  details: Minimal
 - title: Feature 2 Title
   details: Feature 2 Description
 - title: Feature 3 Title

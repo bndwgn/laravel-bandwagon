@@ -10,8 +10,22 @@ class BandwagonEventCreated
     use Dispatchable;
     use SerializesModels;
 
+    /**
+     * The title for the message displayed to users 
+     */
     public $title;
+
+    /**
+     * The subtitle for the message displayed to users 
+     */
     public $subtitle;
+
+    /**
+     * The ip address of the user who generated the event,
+     * this is nullable and should only be used if you want
+     * to filter this event from being seen by the initiator
+     * of this event. 
+     */
     public $ip;
 
     /**
@@ -24,7 +38,6 @@ class BandwagonEventCreated
      */
     public function __construct(String $title, String $subtitle, String $ip = '')
     {
-        error_log('event_fired');
         $this->title = $title;
         $this->subtitle = $subtitle;
         $this->ip = $ip;

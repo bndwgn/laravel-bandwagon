@@ -49,8 +49,15 @@ export default {
             this.title = null
             this.subtitle = null
         },
+        getPath() {
+            let path = Bandwagon.path + '/bandwagon-api/event';
+            if (this.since) {
+                path += '?since=' + this.since;
+            }
+            return path;
+        },
         loadMessage() {
-            axios.get(Bandwagon.path + '/bandwagon-api/event?since=' + this.since)
+            axios.get(this.getPath())
                 .then(response => {
                     if (response.data) {
                         this.title = response.data.title

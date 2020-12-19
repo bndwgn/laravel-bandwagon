@@ -10,7 +10,7 @@ class EventsController extends Controller
 {
     public function index(Request $request)
     {
-        $oldest = time() - config('bandwagon.cleanup.olderthan');
+        $oldest = time() - config('bandwagon.oldest');
 
         return BandwagonEvent::where('event_at', '>', $request->query('since', $oldest))
             ->where('ip', '!=', $request->ip())

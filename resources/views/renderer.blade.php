@@ -1,23 +1,21 @@
 <style>
-#bandwagon-snackbar {
+.bandwagon-snackbar {
     visibility: hidden;
-    min-width: 250px; /* Set a default minimum width */
+    min-width: 250px;
     max-width: 350px;
-    margin-left: 0px; /* Divide value of min-width by 2 */
-    background-color: transparent; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 16px; /* Padding */
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 20px; /* Center the snackbar */
-    bottom: 20px; /* 30px from the bottom */
+    margin-left: 0px;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
 }
-#bandwagon-snackbar.show {
-    visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
-    However, delay the fade out process for 2.5 seconds */
+.bandwagon-snackbar.bandwagon-show {
+    visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s {{ (config('bandwagon.display') - 0.5) }}s;
     animation: fadein 0.5s, fadeout 0.5s {{ (config('bandwagon.display') - 0.5) }}s;
 }
@@ -79,7 +77,13 @@
 }
 </style>
 <div id="bandwagon">
-    <bandwagon-renderer />
+    <bandwagon-renderer 
+        class-snackbar="{{ $classSnackbar }}"
+        class-message="{{ $classMessage }}"
+        class-title="{{ $classTitle }}"
+        class-subtitle="{{ $classSubtitle }}"
+        class-time="{{ $classTime }}"
+    />
 </div>
 <script>
     window.Bandwagon = @json($bandwagonScriptVariables);

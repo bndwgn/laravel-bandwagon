@@ -5,8 +5,8 @@
 build
 composer.lock
 coverage
-docs
 node_modules
 phpunit.xml
 psalm.xml
 vendor
+dist

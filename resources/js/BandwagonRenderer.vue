@@ -1,9 +1,9 @@
 <template>
-    <div id="bandwagon-snackbar" :class="(title || subtitle) ? 'show' : null">
-        <div class="bandwagon-message">
-            <p class="bandwagon-text bandwagon-title">{{ title }}</p>
-            <p class="bandwagon-text bandwagon-subtitle">{{ subtitle }}</p>
-            <p class="bandwagon-text bandwagon-time">{{ timeDifference() }}</p>
+    <div :class="this.classSnackbar + ((title || subtitle) ? ' bandwagon-show' : '')">
+        <div :class="this.classMessage">
+            <p :class="this.classTitle">{{ title }}</p>
+            <p :class="this.classSubtitle">{{ subtitle }}</p>
+            <p :class="this.classTime">{{ timeAgo() }}</p>
         </div>
     </div>
 </template>
@@ -11,6 +11,28 @@
 <script>
 import axios from 'axios'
 export default {
+    props: {
+        classSnackbar: {
+            type: String,
+            default: 'bandwagon-snackbar'
+        },
+        classMessage: {
+            type: String,
+            default: 'bandwagon-message'
+        },
+        classTitle: {
+            type: String,
+            default: 'bandwagon-text bandwagon-title'
+        },
+        classSubtitle: {
+            type: String,
+            default: 'bandwagon-text bandwagon-subtitle'
+        },
+        classTime: {
+            type: String,
+            default: 'bandwagon-text bandwagon-time'
+        }
+    },
     data: function () {
         return {
             title: null,
@@ -38,7 +60,7 @@ export default {
                     }
                 })
         },
-        timeDifference() {
+        timeAgo() {
             var msPerMinute = 60 * 1000;
             var msPerHour = msPerMinute * 60;
             var msPerDay = msPerHour * 24;

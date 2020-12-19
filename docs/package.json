@@ -1,0 +1,19 @@
+{
+  "name": "laravel-bandwagon",
+  "version": "0.0.1",
+  "description": "Social proof package for Laravel",
+  "main": "index.js",
+  "authors": {
+    "name": "Alex Harris",
+    "email": "chasenyc@gmail.com"
+  },
+  "repository": "github.com/bndwgn/laravel-bandwagon/laravel-bandwagon",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}

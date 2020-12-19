@@ -8,4 +8,6 @@ class BandwagonEvent extends Model
 {
     // Disable Laravel's mass assignment protection
     protected $guarded = [];
+
+    protected $hidden = ['ip'];
 }

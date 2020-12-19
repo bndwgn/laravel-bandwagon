@@ -4,7 +4,7 @@
 
 To render the component just add the component to any or all desired pages like so:
 ```html
-<x-bandwagon>
+<x-bandwagon-renderer />
 ```
 This component will be published into your codebase when you run the vendor publish command during installation:
 ```sh

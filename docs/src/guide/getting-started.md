@@ -19,7 +19,7 @@ php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider
 
 To render the component just add the component to any or all desired pages like so:
 ```html
-<x-bandwagon>
+<x-bandwagon-renderer />
 ```
 ## Publishing an event to users
 

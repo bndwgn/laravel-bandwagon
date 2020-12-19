@@ -1943,6 +1943,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    classSnackbar: {
+      type: String,
+      "default": 'bandwagon-snackbar'
+    },
+    classMessage: {
+      type: String,
+      "default": 'bandwagon-message'
+    },
+    classTitle: {
+      type: String,
+      "default": 'bandwagon-text bandwagon-title'
+    },
+    classSubtitle: {
+      type: String,
+      "default": 'bandwagon-text bandwagon-subtitle'
+    },
+    classTime: {
+      type: String,
+      "default": 'bandwagon-text bandwagon-time'
+    }
+  },
   data: function data() {
     return {
       title: null,
@@ -2483,21 +2505,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      class: _vm.title || _vm.subtitle ? "show" : null,
-      attrs: { id: "bandwagon-snackbar" }
-    },
+    { class: this.classSnackbar + (_vm.title || _vm.subtitle ? " show" : "") },
     [
-      _c("div", { staticClass: "bandwagon-message" }, [
-        _c("p", { staticClass: "bandwagon-text bandwagon-title" }, [
-          _vm._v(_vm._s(_vm.title))
-        ]),
+      _c("div", { class: this.classMessage }, [
+        _c("p", { class: this.classTitle }, [_vm._v(_vm._s(_vm.title))]),
         _vm._v(" "),
-        _c("p", { staticClass: "bandwagon-text bandwagon-subtitle" }, [
-          _vm._v(_vm._s(_vm.subtitle))
-        ]),
+        _c("p", { class: this.classSubtitle }, [_vm._v(_vm._s(_vm.subtitle))]),
         _vm._v(" "),
-        _c("p", { staticClass: "bandwagon-text bandwagon-time" }, [
+        _c("p", { class: this.classTime }, [
           _vm._v(_vm._s(_vm.timeDifference()))
         ])
       ])

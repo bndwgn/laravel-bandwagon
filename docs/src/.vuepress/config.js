@@ -60,7 +60,8 @@ module.exports = {
             'getting-started',
             'configuration',
             'cleaning-up',
-            'firing-events'
+            'firing-events',
+            'rendering'
           ]
         }
       ],

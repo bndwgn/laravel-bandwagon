@@ -8,6 +8,19 @@ Out of the box you are provided with the following console command:
 ```sh
 php artisan bandwagon:cleanup
 ```
+
+## Scheduling
+It is recommended to add the command to run on some interval to ensure your table does not get too large by adding it `Kernel.php`:
+```php
+// App/Console/Kernel.php
+
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command('bandwagon:cleanup')->daily();
+}
+```
+
+## Configuration
 This command will remove all events older than what is specified in the `bandwagon.php` config. You can see the specific key here:
 ```php
 // config/bandwagon.php

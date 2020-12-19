@@ -1,56 +1,49 @@
-# 
+# Introduction
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bndwgn/bandwagon.svg?style=flat-square)](https://packagist.org/packages/bndwgn/bandwagon)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/bndwgn/bandwagon/run-tests?label=tests)](https://github.com/bndwgn/bandwagon/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/bndwgn/bandwagon.svg?style=flat-square)](https://packagist.org/packages/bndwgn/bandwagon)
+This is a Laravel package to help promote social proof and legitimacy within your application. With a simple blade component added to any page you can share with potential customers or users that other customers are using and/or paying for your product. A simple pop-up will display in the corner of page with information such as "Someone in New York purchased the annual plan 2 minutes ago."
 
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+# Getting Started
 
 ## Installation
 
-You can install the package via composer:
+You can install this package via composer using: 
 
-```bash
-composer require bndwgn/bandwagon
+```sh
+composer require bndwgn/laravel-bandwagon
 ```
 
-You can publish and run the migrations with:
+The package will automatically register its service provider.
+To publish the config file to `config/bandwagon.php` run:
 
-```bash
-php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider" --tag="migrations"
-php artisan migrate
+```sh
+php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider"
 ```
 
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider" --tag="config"
+## Rendering the component
+
+To render the component just add the component to any or all desired pages like so:
+```html
+<x-bandwagon>
 ```
+## Publishing an event to users
 
-## Usage
+To use the example of sharing a purchase with people who are on the purchase page of your application you would just add the following:
+```php
+// App/Http/Controllers/PurchaseController.php 
+use Bndwgn\Bandwagon\Bandwagon;
 
-``` php
-$bandwagon = new Bndwgn\Bandwagon();
-echo $bandwagon->echoPhrase('Hello, Bndwgn!');
-```
-
-## Testing
-
-``` bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+public function purchase(Request $request, Product $product)
+{
+    $user = Auth::user(); 
+    // ... logic to charge a customer
+    Bandwagon::createEvent(
+        "Someone in ${$user->state}",
+        "Purchased ${$product->displayName}",
+        $request->ip()
+    ); 
+}
+ ```
+This will create a new Bandwagon record which then any users who are on the purchase page where you render the component (`<x-bandwagon>`) will see.
 
 ## Credits
 

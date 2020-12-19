@@ -1,5 +1,5 @@
 <template>
-    <div :class="this.classSnackbar + ((title || subtitle) ? ' bandwagon-show' : '')">
+    <div :class="this.classSnackbar + showClass()">
         <div :class="this.classMessage">
             <p :class="this.classTitle">{{ title }}</p>
             <p :class="this.classSubtitle">{{ subtitle }}</p>
@@ -92,6 +92,9 @@ export default {
             else {
                 return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';   
             }
+        },
+        showClass() {
+            return (this.title || this.subtitle) ? ' bandwagon-show' : '';
         }
     }
 }

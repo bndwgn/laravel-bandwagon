@@ -24,6 +24,7 @@
     border-radius: .5rem;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     padding: .8rem;
+    background-color: #fff;
 }
 
 .bandwagon-text {

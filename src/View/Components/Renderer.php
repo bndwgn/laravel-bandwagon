@@ -24,16 +24,16 @@ class Renderer extends Component
      */
     public function __construct(
         String $classSnackbar = 'bandwagon-snackbar',
-        String $classMessage = 'bandwagon-message',    
-        String $classTitle = 'bandwagon-text bandwagon-title',    
-        String $classSubtitle = 'bandwagon-text bandwagon-subtitle',    
+        String $classMessage = 'bandwagon-message',
+        String $classTitle = 'bandwagon-text bandwagon-title',
+        String $classSubtitle = 'bandwagon-text bandwagon-subtitle',
         String $classTime = 'bandwagon-text bandwagon-time'
     ) {
         $this->classSnackbar = $classSnackbar;
         $this->classMessage = $classMessage;
         $this->classTitle = $classTitle;
         $this->classSubtitle = $classSubtitle;
-        $this->classTime = $classTime;        
+        $this->classTime = $classTime;
     }
 
     /**

@@ -11,12 +11,12 @@ class BandwagonEventCreated
     use SerializesModels;
 
     /**
-     * The title for the message displayed to users 
+     * The title for the message displayed to users
      */
     public $title;
 
     /**
-     * The subtitle for the message displayed to users 
+     * The subtitle for the message displayed to users
      */
     public $subtitle;
 
@@ -24,7 +24,7 @@ class BandwagonEventCreated
      * The ip address of the user who generated the event,
      * this is nullable and should only be used if you want
      * to filter this event from being seen by the initiator
-     * of this event. 
+     * of this event.
      */
     public $ip;
 

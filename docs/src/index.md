@@ -5,11 +5,11 @@ tagline: Social proof package for Laravel
 actionText: Quick Start →
 actionLink: /guide/
 features:
-- title: Plug and Play
-  details: Minimal
-- title: Feature 2 Title
-  details: Feature 2 Description
-- title: Feature 3 Title
-  details: Feature 3 Description
+- title: Built for Laravel
+  details: Easy plug and play social proof solution for any Laravel project
+- title: Gain trust with customers
+  details: Show your customers that other people are using and paying for your product
+- title: Highly customizeable
+  details: Take control of the way it renders, make it your own
 footer: Made by Alex Harris with ❤️
 ---

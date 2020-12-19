@@ -12,7 +12,7 @@ module.exports = {
   /**
    * Ref: https://vuepress.vuejs.org/guide/deploy.html#github-pages
    */
-  base: '/laravel-bandwagon',
+  base: '/',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`

@@ -69,5 +69,5 @@ return [
     | events to the client.
     */
     'domain' => env('BANDWAGON_DOMAIN', null),
-    'path' => env('TELESCOPE_PATH', 'bandwagon'),
+    'path' => env('BANDWAGON_PATH', 'bandwagon'),
 ];

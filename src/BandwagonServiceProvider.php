@@ -91,7 +91,7 @@ class BandwagonServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the Telescope route group configuration array.
+     * Get the Bandwagon route group configuration array.
      *
      * @return array
      */

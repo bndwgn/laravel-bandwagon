@@ -42,6 +42,6 @@ These keys are for use with cleaning up old Bandwagon Events. Events are stored 
 These two values are for the api endpoint that exposes bandwagon events to the client.
 ```php
 'domain' => env('BANDWAGON_DOMAIN', null),
-'path' => env('TELESCOPE_PATH', 'bandwagon'),
+'path' => env('BANDWAGON_PATH', 'bandwagon'),
 ```
 `path` refers to the path prefix for the endpoint. `domain` refers to domain value passed to `Route::group`.

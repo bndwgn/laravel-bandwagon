@@ -20,6 +20,11 @@ There are a few simple configurations you can change through `config/bandwagon.p
 ``` 
 `oldest` refers to how old of an event to display to the user. This value is in seconds and defaults to 1 day. What that means is when a user goes to a page where we are displaying bandwagon events, when they first come to the page there will be a poll to get the most recent event that has occured in under one day, if one is found it will be displayed.
 
+```php
+'enabled' => env('BANDWAGON_ENABLED', true)
+``` 
+`enabled` is a master switch for whether or not bandwagon does anything. If this is disabled no Bandwagon events will be recorded and no messages will be displayed to the user.
+
 ## Cleanup
 
 For cleaning up old events there are a few keys that are used:

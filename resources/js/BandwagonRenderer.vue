@@ -41,8 +41,10 @@ export default {
         }
     },
     mounted() {
-        setInterval(this.loadMessage, Bandwagon.poll * 1000);
-        this.loadMessage();
+        if (Bandwagon.enabled) {
+            setInterval(this.loadMessage, Bandwagon.poll * 1000);
+            this.loadMessage();
+        }
     },
     methods: {
         clearMessage() {

@@ -45,7 +45,7 @@ public function purchase(Request $request, Product $product)
     ); 
 }
  ```
-This will create a new Bandwagon record which then any users who are on the purchase page where you render the component (`<x-bandwagon>`) will see.
+This will create a new Bandwagon record which then any users who are on the purchase page where you render the component (`<x-bandwagon-renderer />`) will see.
 
 ## Credits
 

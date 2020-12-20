@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: /Bandwagon.png
 tagline: Social proof package for Laravel
-actionText: Quick Start →
+actionText: Read the docs →
 actionLink: /guide/
 features:
 - title: Built for Laravel

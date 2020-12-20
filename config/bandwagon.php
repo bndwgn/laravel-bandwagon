@@ -41,7 +41,7 @@ return [
     |
     | This will determine whether Bandwagon will display anything to users.
     */
-    'enabled' => env('BANDWAGON_ENDABLED', true),
+    'enabled' => env('BANDWAGON_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------

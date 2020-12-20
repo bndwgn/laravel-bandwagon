@@ -20,7 +20,7 @@ class Bandwagon
         String $subtitle,
         String $ip = null
     ) {
-        if (!config('bandwagon.enabled')) {
+        if (! config('bandwagon.enabled')) {
             return;
         }
         

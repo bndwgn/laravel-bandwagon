@@ -16,6 +16,8 @@ php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider
 ```
 
 ## Rendering the component
+<br />
+<img :src="$withBase('/bandwagon-thumb.gif')" alt="component">
 
 To render the component just add the component to any or all desired pages like so:
 ```html

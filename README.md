@@ -1,5 +1,7 @@
 # Introduction
 
+![preview](./docs/src/.vuepress/public/preview.png)
+
 This is a Laravel package to help promote social proof and legitimacy within your application. With a simple blade component added to any page you can share with potential customers or users that other customers are using and/or paying for your product. A simple pop-up will display in the corner of page with information such as "Someone in New York purchased the annual plan 2 minutes ago."
 
 Full documentation can be found at [laravelbandwagon.com](https://www.laravelbandwagon.com)
@@ -24,6 +26,9 @@ php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider
 ## Rendering the component
 
 To render the component just add the component to any or all desired pages like so:
+
+![thumb](./docs/src/.vuepress/public/bandwagon-thumb.gif)
+
 ```html
 <x-bandwagon-renderer />
 ```

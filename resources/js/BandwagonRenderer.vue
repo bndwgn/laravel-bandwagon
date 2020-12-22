@@ -79,28 +79,33 @@ export default {
             var elapsed = Date.now() - (this.since * 1000);
 
             if (elapsed < msPerMinute) {
-                return Math.round(elapsed/1000) + ' seconds ago';   
+                let result = Math.round(elapsed/1000);
+                let pluralString = this.pluralString(result);
+                return  `${result} second${pluralString} ago`;   
+            } else if (elapsed < msPerHour) {
+                let result = Math.round(elapsed/msPerMinute);
+                let pluralString = this.pluralString(result);
+                return `${result} minute${pluralString} ago`;   
+            } else if (elapsed < msPerDay ) {
+                let result = Math.round(elapsed/msPerHour);
+                let pluralString = this.pluralString(result);
+                return `${result} hour${pluralString} ago`;   
+            } else if (elapsed < msPerMonth) {
+                let result = Math.round(elapsed/msPerDay);
+                let pluralString = this.pluralString(result);
+                return `approximately ${result} day${pluralString} ago`;   
+            } else if (elapsed < msPerYear) {
+                let result = Math.round(elapsed/msPerMonth);
+                let pluralString = this.pluralString(result);
+                return `approximately ${result} month${pluralString} ago`;   
+            } else {
+                let result = Math.round(elapsed/msPerYear);
+                let pluralString = this.pluralString(result);
+                return `approximately ${result} year${pluralString} ago`;   
             }
-
-            else if (elapsed < msPerHour) {
-                return Math.round(elapsed/msPerMinute) + ' minutes ago';   
-            }
-
-            else if (elapsed < msPerDay ) {
-                return Math.round(elapsed/msPerHour ) + ' hours ago';   
-            }
-
-            else if (elapsed < msPerMonth) {
-                return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';   
-            }
-
-            else if (elapsed < msPerYear) {
-                return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';   
-            }
-
-            else {
-                return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';   
-            }
+        },
+        pluralString(num) {
+            return num > 1 ? 's' : '';
         },
         showClass() {
             return (this.title || this.subtitle) ? ' bandwagon-show' : '';

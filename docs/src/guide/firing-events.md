@@ -5,8 +5,8 @@
 To use the example of sharing a purchase with people who are on the purchase page of your application you would just add the following:
 ```php
 Bandwagon::createEvent(
-    "Someone in ${$user->state}",
-    "Purchased ${$product->displayName}",
+    "Someone from ${$user->state}",
+    "purchased the ${$product->displayName} plan",
     $request->ip()
 ); 
 ```
@@ -25,7 +25,7 @@ The title will be the first line of text in the notification that users will see
 The subtitle is slightly less prominent and can also be altered through css, this field is required, if for any reason you would like to not include a second line you can always just pass an empty string. This line is suggested to be the action used by the consumer such as "purchased the annual plan" but can obviously be used in whatever way is desired. 
 
 ### IP Address
-This field is not required, the purpose of this field is to allow for messages initiated by a user to be filtered out from display to that same user. For example, if there are three users, A, B and C, all three users are on the purchase page of a website, if user B were to make a purchase we would want to display that "Someone in New York, NY made a purchase 1 second ago" to user's A and C but we would not want to display this to user B, who made the purchase. If you would like for user B to see this message as well, you can omit the last parameter from `Bandwagon::createEvent()`.
+This field is not required, the purpose of this field is to allow for messages initiated by a user to be filtered out from display to that same user. For example, if there are three users, A, B and C, all three users are on the purchase page of a website, if user B were to make a purchase we would want to display that "Someone in New York, NY made a purchase 1 second ago" to user's A and C but we would not want to display this to user B, who made the purchase. If you would like for user B to see this message as well, you can omit the last parameter, the ip address, from `Bandwagon::createEvent()`.
 
 ## Laravel Event
 The `Bandwagon::createEvent()` is a very simple wrapper that behind the scenes just fires a new Laravel Event.

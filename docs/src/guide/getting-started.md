@@ -35,8 +35,8 @@ public function purchase(Request $request, Product $product)
     $user = Auth::user(); 
     // ... logic to charge a customer
     Bandwagon::createEvent(
-        "Someone in ${$user->state}",
-        "Purchased ${$product->displayName}",
+        "Someone from ${$user->state}",
+        "purchased the ${$product->displayName} plan",
         $request->ip()
     ); 
 }

@@ -2,7 +2,7 @@
 
 ![preview](./docs/src/.vuepress/public/preview.png)
 
-This is a Laravel package to help promote social proof and legitimacy within your application. With a simple blade component added to any page you can share with potential customers or users that other customers are using and/or paying for your product. A simple pop-up will display in the corner of page with information such as "Someone in New York purchased the annual plan 2 minutes ago."
+This is a Laravel package to help promote social proof and legitimacy within your application. With a simple blade component added to any page you can share with potential customers or users that other customers are using and/or paying for your product. A simple pop-up will display in the corner of page with information such as "Someone from New York purchased the business plan 2 minutes ago."
 
 Full documentation can be found at [laravelbandwagon.com](https://www.laravelbandwagon.com)
 
@@ -44,8 +44,8 @@ public function purchase(Request $request, Product $product)
     $user = Auth::user(); 
     // ... logic to charge a customer
     Bandwagon::createEvent(
-        "Someone in ${$user->state}",
-        "Purchased ${$product->displayName}",
+        "Someone from ${$user->state}",
+        "Purchased the ${$product->displayName} plan",
         $request->ip()
     ); 
 }

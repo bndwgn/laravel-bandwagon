@@ -42,8 +42,10 @@ export default {
     },
     mounted() {
         if (Bandwagon.enabled) {
-            setInterval(this.loadMessage, Bandwagon.poll * 1000);
-            this.loadMessage();
+            setTimeout(() => {
+                setInterval(this.loadMessage, Bandwagon.poll * 1000);
+                this.loadMessage();
+            }, Bandwagon.delay * 1000);
         }
     },
     methods: {

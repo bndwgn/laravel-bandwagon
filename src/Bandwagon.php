@@ -35,6 +35,7 @@ class Bandwagon
     public static function scriptVariables()
     {
         return [
+            'delay' => config('bandwagon.delay'),
             'display' => config('bandwagon.display'),
             'enabled' => config('bandwagon.enabled'),
             'poll' => config('bandwagon.poll'),

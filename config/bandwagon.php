@@ -26,6 +26,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Delay
+    |--------------------------------------------------------------------------
+    |
+    | This is how long to wait once the page has been loaded before displaying
+    | the first event (if one is available). If you want no delay just set 
+    | this value to 0.
+    */
+    'delay' => env('BANDWAGON_DELAY', 3),
+
+    /*
+    |--------------------------------------------------------------------------
     | Oldest message to display
     |--------------------------------------------------------------------------
     |

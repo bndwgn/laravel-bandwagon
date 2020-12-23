@@ -11,9 +11,14 @@ There are a few simple configurations you can change through `config/bandwagon.p
 `poll` refers to how often (in seconds) the package will poll for new messages.
 
 ```php
-'display' => env('BANDWAGON_DISPLAY', 8000)
+'display' => env('BANDWAGON_DISPLAY', 5)
 ``` 
 `display` refers to how long (in seconds) the message will stay on the user's screen.
+
+```php
+'delay' => env('BANDWAGON_DELAY', 3)
+``` 
+`delay` refers to how long (in seconds) before the first message displays, if there is one already available.
 
 ```php
 'oldest' => env('BANDWAGON_OLDEST', 86400)

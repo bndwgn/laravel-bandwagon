@@ -1,11 +1,25 @@
 # Frontend
 
+[[toc]]
+
 ## Rendering the component
 
 To render the component just add the component to any or all desired pages like so:
 ```html
-<x-bandwagon-renderer />
+<html>
+    <head>
+        <!-- ... -->
+    </head>
+    <body>
+        <!-- html here -->
+        <x-bandwagon-renderer />
+    </body>
+</html>
 ```
+::: danger
+The `<x-bandwagon-renderer />` component must be placed at the bottom of your html, outside of any div tags or it will not work properly
+:::
+
 This component will be published into your codebase when you run the vendor publish command during installation:
 ```sh
 php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider"

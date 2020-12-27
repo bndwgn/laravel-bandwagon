@@ -1,5 +1,7 @@
 # Getting Started
 
+[[toc]]
+
 ## Installation
 
 You can install this package via composer using: 
@@ -21,8 +23,13 @@ php artisan vendor:publish --provider="Bndwgn\Bandwagon\BandwagonServiceProvider
 
 To render the component just add the component to any or all desired pages like so:
 ```html
-<x-bandwagon-renderer />
+<body>
+    <!-- html here -->
+    <x-bandwagon-renderer />
+</body>
 ```
+Just make sure to put the component at the bottom of your body tag, outside of any other `<div>` tags.
+
 ## Publishing an event to users
 
 To use the example of sharing a purchase with people who are on the purchase page of your application you would just add the following:
@@ -41,4 +48,8 @@ public function purchase(Request $request, Product $product)
     ); 
 }
  ```
-This will create a new Bandwagon record which then any users who are on the purchase page where you render the component (`<x-bandwagon>`) will see.
+::: tip
+Leave the ip address param off to make sure even the user who created the event sees the message.
+:::
+
+This will create a new Bandwagon record which then any users who are on the purchase page where you render the component (`<x-bandwagon-renderer />`) will see.

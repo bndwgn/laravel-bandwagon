@@ -1,5 +1,9 @@
 # Cleaning up old events
 
+[[toc]]
+
+## Introduction
+
 Every time an event is created using the the `Bandwagon::createEvent()` command a record is stored in the database in a table called `bandwagon_events`. Depending on how many events are being fired you will most likely want to cleanup this table from time to time. Additionally the `bandwagon.php` config key `oldest` dictates the oldest event to display to users, thus rendering any events older than `oldest` useless for this packages purposes.
 
 ## Console command

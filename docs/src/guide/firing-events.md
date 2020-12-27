@@ -1,5 +1,7 @@
 # Firing events
 
+[[toc]]
+
 ## Publishing a new event
 
 To use the example of sharing a purchase with people who are on the purchase page of your application you would just add the following:

@@ -1,5 +1,7 @@
 # Configuration
 
+[[toc]]
+
 ## Key values
 
 There are a few simple configurations you can change through `config/bandwagon.php` that will all impact what and how messages are displayed to the end user:

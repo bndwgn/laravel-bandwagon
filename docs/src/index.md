@@ -1,5 +1,12 @@
 ---
 home: true
+meta:
+  - name: og:title
+    content: Laravel Bandwagon
+  - name: og:image
+    content: /social-share.png
+  - name: keywords
+    content: social proof laravel package fomo socialproof
 heroImage: /Bandwagon.png
 tagline: Social proof package for Laravel
 actionText: Read the docs →
@@ -13,3 +20,7 @@ features:
   details: Take control of the way it renders, make it your own, through css and configuration.
 footer: Made by Alex Harris with ❤️
 ---
+
+<meta property="og:title" content="Laravel Bandwagon">
+<meta property="og:description" content="Easy plug and play social proof solution for any Laravel project.">
+<meta property="og:image" content="/preview.png">

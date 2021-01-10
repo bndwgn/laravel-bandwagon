@@ -18,6 +18,7 @@ class CreateBandwagonEventsTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->string('ip', 50);
+            $table->string('url');
             $table->integer('event_at')->unsigned();
             $table->timestamps();
 

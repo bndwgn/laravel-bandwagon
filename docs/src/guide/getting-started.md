@@ -44,7 +44,8 @@ public function purchase(Request $request, Product $product)
     Bandwagon::createEvent(
         "Someone from ${$user->state}",
         "purchased the ${$product->displayName} plan",
-        $request->ip()
+        $request->ip(), // nullable
+        route('product', $product->id) // nullable
     ); 
 }
  ```

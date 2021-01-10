@@ -33,6 +33,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .bandwagon-title {
@@ -55,6 +56,10 @@
     text-align: right;
     font-size: 12px;
     margin-top: .3rem;
+}
+
+a#bandwagon-link {
+    text-decoration: none;
 }
 
 @-webkit-keyframes fadein {

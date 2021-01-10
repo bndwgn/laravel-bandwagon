@@ -1,9 +1,11 @@
 <template>
     <div :class="this.classSnackbar + showClass()">
         <div :class="this.classMessage">
-            <p :class="this.classTitle">{{ title }}</p>
-            <p :class="this.classSubtitle">{{ subtitle }}</p>
-            <p :class="this.classTime">{{ timeAgo() }}</p>
+            <component id="bandwagon-link" :is="this.url?'a':'span'" :href="this.url || ''">
+                <p :class="this.classTitle">{{ title }}</p>
+                <p :class="this.classSubtitle">{{ subtitle }}</p>
+                <p :class="this.classTime">{{ timeAgo() }}</p>
+            </component>
         </div>
     </div>
 </template>
@@ -37,7 +39,8 @@ export default {
         return {
             title: null,
             subtitle: null,
-            since: null
+            since: null,
+            url: null,
         }
     },
     mounted() {
@@ -67,6 +70,7 @@ export default {
                         this.title = response.data.title
                         this.subtitle = response.data.subtitle
                         this.since = response.data.event_at
+                        this.url = response.data.url
                         setTimeout(this.clearMessage, Bandwagon.display * 1000);
                     }
                 })

@@ -18,13 +18,14 @@ class Bandwagon
     public static function createEvent(
         String $title,
         String $subtitle,
-        String $ip = null
+        String $ip = null,
+        String $url = null
     ) {
         if (! config('bandwagon.enabled')) {
             return;
         }
         
-        event(new BandwagonEventCreated($title, $subtitle, $ip));
+        event(new BandwagonEventCreated($title, $subtitle, $ip, $url));
     }
 
     /**

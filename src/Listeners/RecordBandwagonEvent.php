@@ -13,6 +13,7 @@ class RecordBandwagonEvent
             'title' => $event->title,
             'subtitle' => $event->subtitle,
             'ip' => $event->ip,
+            'url' => $event->url,
             'event_at' => time(),
         ]);
     }

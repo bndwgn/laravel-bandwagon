@@ -1,7 +1,7 @@
 <template>
     <div :class="this.classSnackbar + showClass()">
         <div :class="this.classMessage">
-            <component id="bandwagon-link" :is="this.url?'a':'span'" :href="this.url || ''">
+            <component id="bandwagon-link" :is="this.url != '' ? 'a' : 'span'" :href="this.url || ''">
                 <p :class="this.classTitle">{{ title }}</p>
                 <p :class="this.classSubtitle">{{ subtitle }}</p>
                 <p :class="this.classTime">{{ timeAgo() }}</p>

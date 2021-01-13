@@ -74,5 +74,15 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
+    [
+      "vuepress-plugin-mailchimp",
+      {
+        title: "Updates",
+        content: "Stay up to date on any changes, no spam, ever.",
+        // You need to provide this plugin with your Mailchimp endpoint in order for it
+        // to know where to save the email address. See more detail in Config section.
+        endpoint: "https://laravelbandwagon.us7.list-manage.com/subscribe/post?u=0145e96878d00632811cbb77e&amp;id=22e4fcfd0f"
+      }
+    ]
   ]
 }

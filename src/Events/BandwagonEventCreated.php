@@ -41,7 +41,7 @@ class BandwagonEventCreated
      * @param String $ip
      * @return void
      */
-    public function __construct(String $title, String $subtitle, String $ip = '', String $url)
+    public function __construct(String $title, String $subtitle, String $ip = '', String $url = '')
     {
         $this->title = $title;
         $this->subtitle = $subtitle;
